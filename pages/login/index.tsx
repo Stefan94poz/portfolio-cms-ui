@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,17 +12,29 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { login } from "../../helpers/api/Api";
+import { useRouter } from "next/router";
 
 const theme = createTheme();
 
-export default function SignInSide() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+const Login = () => {
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setError("");
     const data = new FormData(event.currentTarget);
-    console.log({
+    const response = await login({
       email: data.get("email"),
       password: data.get("password"),
     });
+
+    if (response === 401) {
+      return setError((old) => "Wrong credentials!");
+    }
+    // TODO: Implement logout header and footer
+    router.push("/dashboard"); // change to dashboard
   };
 
   return (
@@ -59,7 +71,7 @@ export default function SignInSide() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Login
             </Typography>
             <Box
               component="form"
@@ -87,17 +99,14 @@ export default function SignInSide() {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+              {error && <p style={{ color: "red" }}>{error}</p>}
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Login
               </Button>
             </Box>
           </Box>
@@ -105,4 +114,6 @@ export default function SignInSide() {
       </Grid>
     </ThemeProvider>
   );
-}
+};
+
+export default Login;
