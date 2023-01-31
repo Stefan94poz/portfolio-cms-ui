@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { projects } from "../../helpers/api/Api";
 import classes from "./styles.module.scss";
 
 interface ProjectI {
@@ -15,7 +14,6 @@ interface ProjectI {
 }
 
 const MyWork = ({ data }: any) => {
-  console.log({ data });
   return (
     <>
       <h1>MyWork</h1>

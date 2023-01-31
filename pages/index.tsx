@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
+import Hero from "../components/hero";
 import MyWork from "../components/myWork";
-import { PROJECTS } from "../constants/api";
+import Services from "../components/services";
 import { projects } from "../helpers/api/Api";
-import styles from "../styles/Home.module.css";
+import classNamees from "./Home.module.css";
 
 const Home = ({ data }: any) => {
   // TODO: Create project cards
@@ -13,8 +13,9 @@ const Home = ({ data }: any) => {
         <title>Stefan Stevic Portfolio</title>
         <meta name="description" content="Stefan Stevic CV" />
       </Head>
-      <main className={styles.main}>
-        <h1>This is homepage</h1>
+      <main className="mx-auto ">
+        <Hero />
+        <Services />
         <MyWork data={data} />
       </main>
     </>

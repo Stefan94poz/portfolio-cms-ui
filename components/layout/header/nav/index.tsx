@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import DefaultNav from "./default";
-import MobileNav from "./mobile";
+import Pages from "./pages";
+import classes from "./styles.module.scss";
 
 const Nav = () => {
   const [toggle, settoggle] = useState(false);
@@ -14,11 +14,13 @@ const Nav = () => {
     window.onresize = reportWindowSize;
   });
 
-  // Add styles mobile
+  // Add styles mobile and add navigation
   return (
     <>
-      <DefaultNav />
-      <MobileNav />
+      <div>
+        <button className={classes.mobile}>asd</button>
+        <Pages />
+      </div>
     </>
   );
 };

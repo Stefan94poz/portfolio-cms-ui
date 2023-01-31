@@ -2,7 +2,7 @@ import Link from "next/link";
 import { pages } from "../../../../../constants/pages";
 import classes from "./styles.module.scss";
 
-const MobileNav = () => {
+const Pages = () => {
   interface pagesI {
     name: string;
     link: string;
@@ -10,7 +10,7 @@ const MobileNav = () => {
 
   return (
     <>
-      <ul className={classes.mobile}>
+      <ul className={classes.pages}>
         {pages.map((page: pagesI) => (
           <li
             key={page.name}
@@ -24,4 +24,4 @@ const MobileNav = () => {
   );
 };
 
-export default MobileNav;
+export default Pages;

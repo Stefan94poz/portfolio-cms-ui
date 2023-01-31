@@ -1,9 +1,10 @@
 .nav {
   padding: 0px 15px;
-  background-color: aquamarine;
-  box-shadow: 0px 0px 5px #0000006b;
+  background-color: rgba(255, 255, 255, 0);
   display: flex;
   justify-content: center;
+  z-index: 99;
+  position: relative;
   .navWraper {
     display: flex;
     justify-content: space-between;

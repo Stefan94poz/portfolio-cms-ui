@@ -1,4 +1,4 @@
-.default {
+.pages {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,12 +16,13 @@
     margin-left: 35px;
     a {
       text-transform: capitalize;
+      color: #fff;
     }
   }
 }
 
 @media (max-width: 768px) {
-  .default {
+  .pages {
     display: none !important;
     padding: 0;
     margin: 0;
