@@ -4,5 +4,4 @@ export const pages = [
   { name: "about", link: "/about" },
   { name: "experience", link: "/experience" },
   { name: "dashboard", link: "/dashboard" },
-  { name: "login", link: "/login" },
 ];

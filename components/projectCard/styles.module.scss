@@ -1,0 +1,14 @@
+.projectCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 65px;
+  h4 {
+    margin-top: 25px;
+    font-weight: 700;
+  }
+  p {
+    color: #9999;
+  }
+}

@@ -5,26 +5,24 @@
   list-style-type: none;
   padding: 25px;
 
-  .login {
-    margin-left: 100px;
-    padding: 5px 20px;
-    border-radius: 10px;
-    background-color: red;
-    color: #fff;
-  }
   li {
     margin-left: 35px;
     a {
       text-transform: capitalize;
-      color: #fff;
+      color: red;
     }
   }
 }
 
 @media (max-width: 768px) {
   .pages {
-    display: none !important;
-    padding: 0;
-    margin: 0;
+    li {
+      margin-left: 0px;
+      margin-bottom: 25px;
+      a {
+        text-transform: capitalize;
+        color: red;
+      }
+    }
   }
 }

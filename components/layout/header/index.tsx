@@ -23,7 +23,7 @@ const Header = () => {
     <>
       <nav className={`${classes.nav} ${offSet}`}>
         <div className={classes.navWraper}>
-          <Link href="/login" className={classes.logo}>
+          <Link href="/" className={classes.logo}>
             <Image src="/next.svg" alt="Logo" width={150} height={50} />
           </Link>
           <Nav />

@@ -1,12 +1,13 @@
 import Image from "next/image";
-import classNamees from "./styles.module.css";
+import classes from "./styles.module.scss";
 
 const Services = () => {
   return (
     <>
-      <section className="bg-white dark:bg-gray-900">
+      <section className={`${classes.services} g-white dark:bg-gray-900 `}>
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
           <div className="mt-4 md:mt-0">
+            <h6>What I do ?</h6>
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               Lets create more tools and ideas that brings us together.
             </h2>

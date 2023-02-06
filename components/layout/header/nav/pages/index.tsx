@@ -2,7 +2,7 @@ import Link from "next/link";
 import { pages } from "../../../../../constants/pages";
 import classes from "./styles.module.scss";
 
-const Pages = () => {
+const Pages = ({ className }: any) => {
   interface pagesI {
     name: string;
     link: string;
@@ -10,12 +10,9 @@ const Pages = () => {
 
   return (
     <>
-      <ul className={classes.pages}>
+      <ul className={`${classes.pages} ${className}`}>
         {pages.map((page: pagesI) => (
-          <li
-            key={page.name}
-            className={page.name === "login" ? classes.login : ""}
-          >
+          <li key={page.name}>
             <Link href={page.link}>{page.name}</Link>
           </li>
         ))}
