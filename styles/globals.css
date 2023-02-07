@@ -43,3 +43,9 @@ p {
 .toggle {
   display: flex !important;
 }
+
+/* Testimonials pagination */
+.styles_testimonials__jQZqN .swiper-pagination {
+  position: relative !important;
+  margin-top: 25px !important;
+}

@@ -1,7 +1,9 @@
 import Head from "next/head";
+import AboutMe from "../components/aboutMe";
 import Hero from "../components/hero";
 import MyWork from "../components/myWork";
 import Services from "../components/services";
+import Testimonials from "../components/testimonials";
 import { projects } from "../helpers/api/Api";
 import classNamees from "./Home.module.css";
 
@@ -17,6 +19,8 @@ const Home = ({ data }: any) => {
         <Hero />
         <Services />
         <MyWork data={data} />
+        <AboutMe />
+        <Testimonials />
       </main>
     </>
   );

@@ -6,11 +6,11 @@ import classes from "./styles.module.scss";
 
 const ProjectCard = ({ project }: any) => {
   const { id, name, stack, slug } = project;
-  console.log("stacks", Object.keys(stack).length);
   const stacks = stack.map(
     (item: string, index: number) =>
       item + (index === Object.keys(stack).length - 1 ? "" : " - ")
   );
+
   // FIXME: Remove or condition when you change all slugs
   return (
     <Link href={`projects/${slug || ""}`}>
