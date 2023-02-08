@@ -6,7 +6,7 @@ import classes from "./styles.module.scss";
 
 const ProjectCard = ({ project }: any) => {
   const { id, name, stack, slug } = project;
-  const stacks = stack.map(
+  const stacks = stack?.map(
     (item: string, index: number) =>
       item + (index === Object.keys(stack).length - 1 ? "" : " - ")
   );

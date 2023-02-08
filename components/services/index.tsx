@@ -6,6 +6,15 @@ const Services = () => {
     <>
       <section className={`${classes.services} g-white dark:bg-gray-900 `}>
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
+          <div className="relative">
+            <Image
+              className="w-full dark:block"
+              src="services.svg"
+              alt="dashboard image"
+              width={250}
+              height={250}
+            />
+          </div>
           <div className="mt-4 md:mt-0">
             <h6>What I do ?</h6>
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -22,15 +31,6 @@ const Services = () => {
             >
               Get started
             </a>
-          </div>
-          <div className="relative">
-            <Image
-              className="w-full dark:block"
-              src="services.svg"
-              alt="dashboard image"
-              width={250}
-              height={250}
-            />
           </div>
         </div>
       </section>

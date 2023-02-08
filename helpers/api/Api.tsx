@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOGIN, LOGOUT, PROJECTS } from "../../constants/api";
+import { LOGIN, LOGOUT, POSTS, PROJECTS } from "../../constants/api";
 
 export const login = async (input: any) => {
   try {
@@ -15,6 +15,17 @@ export const login = async (input: any) => {
 export const projects = async () => {
   try {
     const res = await fetch(PROJECTS);
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const posts = async () => {
+  try {
+    const res = await fetch(POSTS);
     const data = await res.json();
 
     return data;
