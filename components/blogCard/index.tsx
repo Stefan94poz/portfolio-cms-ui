@@ -7,15 +7,19 @@ import classes from "./styles.module.scss";
 const BlogCard = ({ post }: any) => {
   console.log("post", post);
   const { id, title, content, slug, createdAt } = post;
-  const date = moment(createdAt).format("DD-MM-YYYY");
-  console.log("date", date);
+  const month = moment(createdAt).format("MMM");
+  const day = moment(createdAt).format("DD");
 
   // FIXME: Remove or condition when you change all slugs
-  // TODO: Add links on title
+  // TODO: Add hover on title
   return (
     <Link href={`blog/${slug || ""}`}>
       <div className={classes.blogCard} key={id}>
         <Image src="/project.jpg" alt="Logo" width={540} height={360} />
+        <div className={classes.date}>
+          <p>{month}</p>
+          <p>{day}</p>
+        </div>
         <div className={classes.textWrap}>
           <h4>{title}</h4>
           <span>BY: Stefan Stevic</span>

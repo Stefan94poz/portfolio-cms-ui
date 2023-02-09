@@ -4,9 +4,11 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 65px;
+  position: relative;
   img {
     height: 350px;
     object-fit: cover;
+    border-radius: 8px 8px 0px 0px;
   }
   &:hover {
     .textWrap {
@@ -42,4 +44,23 @@
 
 .readMore {
   margin-top: 25px;
+}
+
+.date {
+  top: 30px;
+  right: 130px;
+  width: 55px;
+  height: 60px;
+  background-color: #fff;
+  color: #040c2c;
+  font-size: 18px;
+  font-weight: 700;
+  z-index: 9;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
 }
