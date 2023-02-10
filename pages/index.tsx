@@ -1,10 +1,10 @@
 import Head from "next/head";
-import AboutMe from "../components/aboutMe";
-import Blog from "../components/blog";
-import Hero from "../components/hero";
-import MyWork from "../components/myWork";
-import Services from "../components/services";
-import Testimonials from "../components/testimonials";
+import AboutMe from "../components/sections/aboutMe";
+import Blog from "../components/sections/blog";
+import Hero from "../components/sections/hero";
+import MyWork from "../components/sections/myWork";
+import Services from "../components/sections/services";
+import Testimonials from "../components/sections/testimonials";
 import { posts as allPosts, projects as allProjects } from "../helpers/api/Api";
 import classNamees from "./Home.module.css";
 

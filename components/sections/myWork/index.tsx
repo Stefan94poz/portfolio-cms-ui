@@ -1,23 +1,11 @@
-import Image from "next/image";
 import classes from "./styles.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper";
 import { useEffect, useState } from "react";
-import ProjectCard from "../projectCard";
-
-interface ProjectI {
-  id: string;
-  name: string;
-  stack: string[];
-  packages: string[];
-  github: string;
-  description: string;
-  devId: string;
-  createdAt: string;
-  updatedAt: string;
-}
+import ProjectCard from "./projectCard";
+import { ProjectI } from "../../../constants/interface";
 
 const MyWork = ({ data }: any) => {
   const [projects, setProjects] = useState([]);

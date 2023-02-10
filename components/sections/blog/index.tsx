@@ -5,20 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper";
 import { useEffect, useState } from "react";
-import ProjectCard from "../projectCard";
-import BlogCard from "../blogCard";
-
-interface PostI {
-  id: string;
-  title: string;
-  content: string;
-  slug: string;
-  published: boolean;
-  authorId: string;
-  author: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import BlogCard from "./blogCard";
+import { PostI } from "../../../constants/interface";
 
 const Blog = ({ posts }: any) => {
   const [blog, setBlog] = useState([]);
