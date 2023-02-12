@@ -1,5 +1,13 @@
 import axios from "axios";
-import { LOGIN, LOGOUT, POSTS, PROJECTS } from "../../constants/api";
+import {
+  fetchUrl,
+  LOGIN,
+  LOGOUT,
+  POST,
+  POSTS,
+  PROJECT,
+  PROJECTS,
+} from "../../constants/api";
 
 export const login = async (input: any) => {
   try {
@@ -12,26 +20,53 @@ export const login = async (input: any) => {
   }
 };
 
-export const projects = async () => {
-  try {
-    const res = await fetch(PROJECTS);
-    const data = await res.json();
+export const projects = {
+  findAll: async () => {
+    try {
+      const res = await fetch(PROJECTS);
+      const data = await res.json();
 
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  findOne: async (value: string) => {
+    try {
+      const res = await fetch(
+        fetchUrl(PROJECT, { name: "slug", value: value })
+      );
+
+      const data = await res.json();
+
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
-export const posts = async () => {
-  try {
-    const res = await fetch(POSTS);
-    const data = await res.json();
+export const posts = {
+  findAll: async () => {
+    try {
+      const res = await fetch(POSTS);
+      const data = await res.json();
 
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  findOne: async (value: string | undefined) => {
+    try {
+      const res = await fetch(fetchUrl(POST, { name: "slug", value: value }));
+      const data = await res.json();
+
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 export const logout = async () => {

@@ -1,19 +1,35 @@
+import Subpage from "../../components/layout/subpage";
+import MyWork from "../../components/sections/myWork";
+import ProjectCard from "../../components/sections/myWork/projectCard";
 import { ProjectI } from "../../constants/interface";
-import { projects as allProjects } from "../../helpers/api/Api";
+import { projects } from "../../helpers/api/Api";
+import classes from "./styles.module.scss";
 
 const Projects = ({ projects }: any) => {
-  console.log({ projects });
   return (
     <>
-      <h1>etst</h1>
+      <Subpage
+        title={"Projects"}
+        description="Stefan Stevic's finished projects"
+      >
+        <div className="container mx-auto">
+          <div className={`${classes.projects} ${classes.flexGap}`}>
+            {projects?.map((project: ProjectI) => (
+              <div key={project.id}>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </Subpage>
     </>
   );
 };
 
 export async function getServerSideProps() {
-  // Fetch data from external API
-  const projects = await allProjects();
+  const getProjects = await projects.findAll();
 
-  return { props: { projects } };
+  return { props: { projects: getProjects } };
 }
+
 export default Projects;

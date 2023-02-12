@@ -21,3 +21,14 @@ export interface PostI {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface ParamI {
+  name: string;
+  value: any;
+}
+
+export type SubpageProps = {
+  children: string | JSX.Element | JSX.Element[];
+  title: string;
+  description: string;
+};

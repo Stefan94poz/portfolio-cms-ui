@@ -11,9 +11,8 @@ const ProjectCard = ({ project }: any) => {
       item + (index === Object.keys(stack).length - 1 ? "" : " - ")
   );
 
-  // FIXME: Remove or condition when you change all slugs
   return (
-    <Link href={`projects/${slug || ""}`}>
+    <Link href={`projects/${slug}`}>
       <div className={classes.projectCard} key={id}>
         <Image src="/project.jpg" alt="Logo" width={340} height={340} />
         <h4>{name}</h4>

@@ -1,7 +1,14 @@
+import Subpage from "../../components/layout/subpage";
+
 const Dashboard = () => {
   return (
     <>
-      <h1>Hello Dashboard</h1>
+      <Subpage
+        title={"Dashboard"} // new subpage only for dashboard
+        description="Stefan Stevic's finished projects"
+      >
+        <h1>Dashboard</h1>
+      </Subpage>
     </>
   );
 };
