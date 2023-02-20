@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { pages } from "../../../../../constants/pages";
+import { pages } from "../../../../../../constants/pages";
+
 import classes from "./styles.module.scss";
 
 const Pages = ({ className }: any) => {

@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import classes from "./styles.module.scss";
-import MenuIcon from "@mui/icons-material/Menu";
-import { useSelector, useDispatch } from "react-redux";
-import CloseIcon from "@mui/icons-material/Close";
 import Nav from "./nav";
 import Image from "next/image";
 
